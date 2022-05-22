@@ -104,6 +104,20 @@ kube-worker-1         Ready    <none>                 2m22s   v1.23.4
 kube-worker-2         Ready    <none>                 32s     v1.23.4
 ```
 
+vagrant@kube-worker-1:~$  
+mkdir -p $HOME/.kube
+
+vagrant@kube-worker-2:~$  
+mkdir -p $HOME/.kube
+
+
+vagrant@kube-control-plane:~$ 
+scp -p /home/vagrant/.kube/config 10.211.55.143:/home/vagrant/.kube/
+
+vagrant@kube-control-plane:~$ 
+scp -p /home/vagrant/.kube/config 10.211.55.144:/home/vagrant/.kube/
+
+
 ## Verifying the Installation
 
 To verify the installation, you can create a new Pod and inspect which node it is running on.
